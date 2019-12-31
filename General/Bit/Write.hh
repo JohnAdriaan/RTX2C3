@@ -41,6 +41,9 @@ private: // Proxy
 
 public: // Methods
 
+	/// Allow assignment to whole fundamental type
+	using Update<S,T,Width,Shift,Index,Mask>::operator =;
+
 	using Read<S,T,Width,Shift,Index,Mask>::operator [];
 
 	/// Isolate bitfield
