@@ -27,12 +27,12 @@ namespace SCBs {
 
 	/// CPU Identification register
     struct CPUID {
-    	unsigned     Revision    :  4; ///< The `P` number in the "RnPn" identifier
-    	PartNos      PartNo      : 12; ///< Part Number
-    	unsigned                 :  4; ///< Reads as `0xF`
-    	unsigned     Variant     :  4; ///< The 'R' number in the "RnPn" identifier
-    	Implementors Implementor :  8; ///< Implementer code
-    	unsigned                 :  0;
+    	unsigned Revision    :  4; ///< The `P` number in the "RnPn" identifier
+    	unsigned PartNo      : 12; ///< {PartNos} Part Number
+    	unsigned             :  4; ///< Reads as `0xF`
+    	unsigned Variant     :  4; ///< The 'R' number in the "RnPn" identifier
+    	unsigned Implementor :  8; ///< {Implementors} Implementor code
+    	unsigned             :  0;
     }; // CPUID
     typedef Field<CPUID, unsigned> FieldCPUID;
 
@@ -84,8 +84,8 @@ namespace SCBs {
     	      unsigned               :  5;
     	      unsigned PRIGROUP      :  3; ///< Interrupt Priority Grouping field
     	      unsigned               :  4;
-    	const Endians  ENDIANNESS    :  1; ///< Implementation configured
-    	      VectKeys VECTKEY       : 16; ///< Reads as VECTKEYSTAT. Always write VECTKEY
+    	const unsigned ENDIANNESS    :  1; ///< {Endians} Implementation configured
+    	      unsigned VECTKEY       : 16; ///< {VectKeys} Reads as VECTKEYSTAT. Always write VECTKEY
     	      unsigned               :  0;
     }; // AIRCR
     typedef Field<AIRCR, unsigned> FieldAIRCR;

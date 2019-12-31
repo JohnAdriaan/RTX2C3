@@ -33,7 +33,7 @@ namespace ARM::NXP::Timers::WDOGs {
 		      unsigned STOP    :  1; ///< Stop enable
 		      unsigned WAIT    :  1; ///< Wait enable
 		      unsigned DBG     :  1; ///< Debug enable
-		      TSTs     TST     :  2; ///< Watchdog Test
+		      unsigned TST     :  2; ///< {TSTs} Watchdog Test
 		      unsigned UPDATE  :  1; ///< Allow Updates
 		      unsigned INT     :  1; ///< Watchdog Interrupt
 		      unsigned EN      :  1; ///< Watchdog Enable
