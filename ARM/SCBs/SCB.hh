@@ -237,7 +237,7 @@ namespace SCBs {
     typedef void *AddrReg;
 
     /// System Control Block
-	struct SCB : private _SCB_ {
+	struct SCB : private _ARM_ {
 		FieldCPUID CPUID; ///< CPU Identification register
 		FieldICSR  ICSR;  ///< Interrupt Control and Status Register
 		FieldVTOR  VTOR;  ///< Vector Table Offset Register

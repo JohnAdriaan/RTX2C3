@@ -16,9 +16,6 @@ namespace ARM::NVICs {
 	/// See `NVICs/NVICs.hh` for full definition
 	enum class IRQs;
 
-	class _NVIC_ : private _ARM_ {
-	}; // _NVIC_
-
 	/// See `NVICs/NVIC.hh` for definitions
 	struct NVIC;
 

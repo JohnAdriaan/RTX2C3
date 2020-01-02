@@ -10,13 +10,7 @@
 
 namespace ARM::NXP::CCMs {
 
-	class _CCMs_ : private _NXP_ {
-	}; // _CCMs_
-
 	namespace Analogs {
-
-		class _Analogs_ : private _CCMs_ {
-		}; // _Analogs_
 
 	} // namespace Analogs
 
@@ -29,7 +23,5 @@ namespace ARM::NXP::CCMs {
 	extern volatile XTALOSC xtalOsc;
 
 } // namespace ARM::NXP::CCMs
-
-#include "Analogs.hh"
 
 #endif // ARM_NXP_CCMs_CCMs_hh

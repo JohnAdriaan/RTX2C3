@@ -10,9 +10,6 @@
 
 namespace ARM::NXP::Timers {
 
-	class _Timers_ : private _NXP_ {
-	}; // _Timers_
-
 	namespace WDOGs {
 
 		struct WDOG;

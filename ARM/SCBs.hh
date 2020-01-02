@@ -13,9 +13,6 @@
 /// These are its definitions.
 namespace ARM::SCBs {
 
-	class _SCB_ : private _ARM_ {
-	}; // _SCB_
-
 	/// See `SCBs/ACTLR.hh` for definitions
 	union ACTLR;
 

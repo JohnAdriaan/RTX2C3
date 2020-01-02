@@ -49,7 +49,7 @@ namespace NVICs {
 	typedef Bit::Update<IPR, unsigned, 8> FieldIPR;
 
 	/// Nested Vectored Interrupt Controller
-	struct NVIC : private _NVIC_ {
+	struct NVIC : private _ARM_ {
 #define ISERs(ISERs)         \
 		struct ISERs {       \
 			FieldISER ISER0; \

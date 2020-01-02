@@ -24,9 +24,6 @@
 /// * Individual Exceptions, by default, are linked to `Default()`.
 namespace ARM::ISRs {
 
-	class _ISR_ : private _ARM_ {
-	}; // _ISR_
-
 	/// Generic ISR entry
 	typedef void ISR();
 
