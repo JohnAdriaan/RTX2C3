@@ -11,9 +11,6 @@
 /// Functions and variables to monitor the `Stack`
 namespace CRT::Stack {
 
-	class _Stack_ : private _CRT_ {
-	}; // _Stack_
-
 	/// Call `Stack::Fill()` during board initialisation
 	void Fill();
 

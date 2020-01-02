@@ -11,9 +11,6 @@
 /// Functions and variables to use and monitor the `Heap`
 namespace CRT::Heap {
 
-	class _Heap_ : private _CRT_ {
-	}; // _Heap_
-
 	/// `Node` stores metadata about `Alloc()`s (and free blocks)
 	struct Node;
 

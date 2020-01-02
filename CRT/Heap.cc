@@ -10,7 +10,7 @@ typedef unsigned short Index;
 
 using namespace CRT;
 
-struct Heap::Node : private _Heap_ {
+struct Heap::Node : private _CRT_ {
 
 #ifndef NDEBUG
 	// When debugging, this value (and its NOT) is used to check for overflows.
