@@ -5,4 +5,5 @@
 
 #include "USB.hh"
 #include "Sys.hh"
+#include "Audio.hh"
 #include "ENet.hh"

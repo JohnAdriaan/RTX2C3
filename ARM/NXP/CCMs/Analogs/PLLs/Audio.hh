@@ -25,10 +25,10 @@ namespace ARM::NXP::CCMs::Analogs::PLLs {
 	      unsigned                 :  5;
 	      unsigned POWERDOWN       :  1; ///< Power down the PLL
 	      unsigned ENABLE          :  1; ///< Enable PLL output
-	      Bypasses BYPASS_CLK_SRC  :  2; ///< Determine the bypass source
+	      unsigned BYPASS_CLK_SRC  :  2; ///< {Bypasses} Determine the bypass source
 	      unsigned BYPASS          :  1; ///< Bypass the PLL
 	      unsigned                 :  2;
-	      PostDivs POST_DIV_SELECT :  2;
+	      unsigned POST_DIV_SELECT :  2; ///< {PostDivs} Divider after PLL, but before enable and bypass Mux
 	      unsigned                 :  1;
 	      unsigned                 :  9;
 	const unsigned LOCK            :  1; ///< PLL is currently locked

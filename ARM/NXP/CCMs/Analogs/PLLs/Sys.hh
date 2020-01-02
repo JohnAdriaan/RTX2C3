@@ -19,7 +19,7 @@ namespace ARM::NXP::CCMs::Analogs::PLLs {
 	      unsigned                :  5;
 	      unsigned POWER          :  1; ///< Power up the PLL
 	      unsigned ENABLE         :  1; ///< Enable PLL output
-	      Bypasses BYPASS_CLK_SRC :  2; ///< Determine the bypass source
+	      unsigned BYPASS_CLK_SRC :  2; ///< {Bypasses} Determine the bypass source
 	      unsigned BYPASS         :  1; ///< Bypass the PLL
 	      unsigned                : 14;
 	const unsigned LOCK           :  1; ///< PLL is currently locked

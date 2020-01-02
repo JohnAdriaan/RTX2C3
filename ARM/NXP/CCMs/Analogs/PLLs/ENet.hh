@@ -19,7 +19,7 @@ namespace ARM::NXP::CCMs::Analogs::PLLs {
 		      unsigned                  : 5;
 		      unsigned POWERDOWN        : 1; ///< Power down the PLL
 		      unsigned                  : 1;
-		      Bypasses BYPASS_CLK_SRC   : 2; ///< Determine the bypass source
+		      unsigned BYPASS_CLK_SRC   : 2; ///< {Bypasses} Determine the bypass source
 		      unsigned BYPASS           : 1; ///< Bypass the PLL
 		      unsigned                  : 2;
 		      unsigned                  : 2;

@@ -25,11 +25,11 @@ namespace ARM::NXP::CCMs::Analogs {
 	/// Note that Misc0 serves multiple peripherals. The
 	/// definitions here are only those applicable to the CCM
 	struct Misc0Fields {
-		unsigned                   : 10;
-		StopModes STOP_MODE_CONFIG :  2; ///< Which Analog peripherals are on during STOP
-		unsigned  DISCON_HIGH_SNVS :  1; ///< Disconnect VDD_HIGH_IN-to-VDD_SNVS_IN switch
-		unsigned                   : 19;
-	    unsigned                   :  0;
+		unsigned                  : 10;
+		unsigned STOP_MODE_CONFIG :  2; ///< {StopModes} Which Analog peripherals are on during STOP
+		unsigned DISCON_HIGH_SNVS :  1; ///< Disconnect VDD_HIGH_IN-to-VDD_SNVS_IN switch
+		unsigned                  : 19;
+	    unsigned                  :  0;
 	}; // Misc0Fields
 	typedef Field<Misc0Fields, unsigned> FieldMisc0;
 
