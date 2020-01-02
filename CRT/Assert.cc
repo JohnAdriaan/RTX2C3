@@ -6,5 +6,5 @@
 #include "../CRT.hh"
 
 __attribute__((__weak__))
-void Asserted() {
-} // Asserted()
+void CRT::Asserted() {
+} // CRT::Asserted()
