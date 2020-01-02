@@ -17,7 +17,7 @@ void ARM::NXP::Start() {
 	VTOR = &ARM::ISRs::vectors;
 
 	// Initialise Stack Pointer
-	asm("      ldr sp, %0" : : "m" (ARM::ISRs::vectors.stack) );
+	asm("ldr sp, %0" : : "m" (ARM::ISRs::vectors.stack) );
 
 	CRT::Init();
 	ARM::NXP::Init();
