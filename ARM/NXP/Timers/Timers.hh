@@ -10,21 +10,21 @@
 
 namespace ARM::NXP::Timers {
 
-	namespace WDOGs {
+	namespace WDogs {
 
-		struct WDOG;
+		struct WDog;
 
-		struct RTWDOG;
+		struct RTWDog;
 
-		extern volatile WDOG wDog1;
+		extern volatile WDog wDog1;
 
-		extern volatile WDOG wDog2;
+		extern volatile WDog wDog2;
 
-		extern volatile RTWDOG wDog3;
+		extern volatile RTWDog wDog3;
 
-		extern volatile RTWDOG rtwDog; ///< Alias for `wDog3`
+		extern volatile RTWDog rtwDog; ///< Alias for `wDog3`
 
-	} // namespace WDOGs
+	} // namespace WDogs
 
 } // namespace ARM::NXP::Timers
 

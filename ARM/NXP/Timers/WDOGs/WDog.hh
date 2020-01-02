@@ -1,16 +1,16 @@
 // © 2019 John Adriaan. Licensed under the "3-clause BSD License"
 ///
-/// \file ARM/NXP/Timers/WDOGs/WDOG.hh
+/// \file ARM/NXP/Timers/WDogs/WDog.hh
 ///
 
-#ifndef ARM_NXP_Timers_WDOGs_WDOG_hh
-#define ARM_NXP_Timers_WDOGs_WDOG_hh
+#ifndef ARM_NXP_Timers_WDogs_WDog_hh
+#define ARM_NXP_Timers_WDogs_WDog_hh
 
 #include <General/Field.hh>
 
 #include "../Timers.hh"
 
-namespace ARM::NXP::Timers::WDOGs {
+namespace ARM::NXP::Timers::WDogs {
 
 	/// Watchdog Control Register
 	struct WCR {
@@ -62,28 +62,28 @@ namespace ARM::NXP::Timers::WDOGs {
 	}; // WMCR
 	typedef Field<WMCR, word> FieldWMCR;
 
-	struct WDOG {
+	struct WDog {
 		FieldWCR  WCR;  ///< Watchdog Control Register
 		WSRs      WSR;  ///< Watchdog Service Register
 		FieldWRSR WRSR; ///< Watchdog Reset Status Register
 		FieldWICR WICR; ///< Watchdog Interrupt Control Register
 		FieldWMCR WMCR; ///< Watchdog Miscellaneous Control Register
 		word      xA;   // Padding
-	}; // WDOG
-	static_assert(sizeof(WDOG)==6*sizeof(word), "Incorrect ARM::NXP::Timers::WDOGs::WDOG size");
+	}; // WDog
+	static_assert(sizeof(WDog)==6*sizeof(word), "Incorrect ARM::NXP::Timers::WDogs::WDog size");
 
-} // namespace ARM::NXP::Timers::WDOGs
+} // namespace ARM::NXP::Timers::WDogs
 
-static volatile ARM::NXP::Timers::WDOGs::FieldWCR  &WDOG1_WCR  = ARM::NXP::Timers::WDOGs::wDog1.WCR;
-static volatile ARM::NXP::Timers::WDOGs::WSRs      &WDOG1_WSR  = ARM::NXP::Timers::WDOGs::wDog1.WSR;
-static volatile ARM::NXP::Timers::WDOGs::FieldWRSR &WDOG1_WRSR = ARM::NXP::Timers::WDOGs::wDog1.WRSR;
-static volatile ARM::NXP::Timers::WDOGs::FieldWICR &WDOG1_WICR = ARM::NXP::Timers::WDOGs::wDog1.WICR;
-static volatile ARM::NXP::Timers::WDOGs::FieldWMCR &WDOG1_WMCR = ARM::NXP::Timers::WDOGs::wDog1.WMCR;
+static volatile ARM::NXP::Timers::WDogs::FieldWCR  &WDOG1_WCR  = ARM::NXP::Timers::WDogs::wDog1.WCR;
+static volatile ARM::NXP::Timers::WDogs::WSRs      &WDOG1_WSR  = ARM::NXP::Timers::WDogs::wDog1.WSR;
+static volatile ARM::NXP::Timers::WDogs::FieldWRSR &WDOG1_WRSR = ARM::NXP::Timers::WDogs::wDog1.WRSR;
+static volatile ARM::NXP::Timers::WDogs::FieldWICR &WDOG1_WICR = ARM::NXP::Timers::WDogs::wDog1.WICR;
+static volatile ARM::NXP::Timers::WDogs::FieldWMCR &WDOG1_WMCR = ARM::NXP::Timers::WDogs::wDog1.WMCR;
 
-static volatile ARM::NXP::Timers::WDOGs::FieldWCR  &WDOG2_WCR  = ARM::NXP::Timers::WDOGs::wDog2.WCR;
-static volatile ARM::NXP::Timers::WDOGs::WSRs      &WDOG2_WSR  = ARM::NXP::Timers::WDOGs::wDog2.WSR;
-static volatile ARM::NXP::Timers::WDOGs::FieldWRSR &WDOG2_WRSR = ARM::NXP::Timers::WDOGs::wDog2.WRSR;
-static volatile ARM::NXP::Timers::WDOGs::FieldWICR &WDOG2_WICR = ARM::NXP::Timers::WDOGs::wDog2.WICR;
-static volatile ARM::NXP::Timers::WDOGs::FieldWMCR &WDOG2_WMCR = ARM::NXP::Timers::WDOGs::wDog2.WMCR;
+static volatile ARM::NXP::Timers::WDogs::FieldWCR  &WDOG2_WCR  = ARM::NXP::Timers::WDogs::wDog2.WCR;
+static volatile ARM::NXP::Timers::WDogs::WSRs      &WDOG2_WSR  = ARM::NXP::Timers::WDogs::wDog2.WSR;
+static volatile ARM::NXP::Timers::WDogs::FieldWRSR &WDOG2_WRSR = ARM::NXP::Timers::WDogs::wDog2.WRSR;
+static volatile ARM::NXP::Timers::WDogs::FieldWICR &WDOG2_WICR = ARM::NXP::Timers::WDogs::wDog2.WICR;
+static volatile ARM::NXP::Timers::WDogs::FieldWMCR &WDOG2_WMCR = ARM::NXP::Timers::WDogs::wDog2.WMCR;
 
-#endif // ARM_NXP_Timers_WDOGs_WDOG_hh
+#endif // ARM_NXP_Timers_WDogs_WDog_hh

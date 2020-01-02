@@ -1,16 +1,16 @@
 // © 2019 John Adriaan. Licensed under the "3-clause BSD License"
 ///
-/// \file ARM/NXP/Timers/WDOGs/RTWDOG.hh
+/// \file ARM/NXP/Timers/WDogs/RTWDog.hh
 ///
 
-#ifndef ARM_NXP_Timers_WDOGs_RTWDOG_hh
-#define ARM_NXP_Timers_WDOGs_RTWDOG_hh
+#ifndef ARM_NXP_Timers_WDogs_RTWDog_hh
+#define ARM_NXP_Timers_WDogs_RTWDog_hh
 
 #include <General/Field.hh>
 
 #include "../Timers.hh"
 
-namespace ARM::NXP::Timers::WDOGs {
+namespace ARM::NXP::Timers::WDogs {
 
 	/// Watchdog Test modes
 	enum TSTs {
@@ -48,6 +48,7 @@ namespace ARM::NXP::Timers::WDOGs {
 	}; // CS
 	typedef Field<CS, unsigned> FieldCS;
 
+	/// Special Counter values to command different RTWatchdog functions
 	enum CNTs {
 		Unlock1 = 0xC520,                   ///< 16-bit Unlock1 code
 		Unlock2 = 0xD928,                   ///< 16-bit Unlock2 code
@@ -97,19 +98,24 @@ namespace ARM::NXP::Timers::WDOGs {
 	}; // WIN
 	typedef Field<WIN, unsigned> FieldWIN;
 
-	struct RTWDOG {
+	struct RTWDog {
 		FieldCS    CS;
 		FieldCNT   CNT;
 		FieldTOVAL TOVAL;
 		FieldWIN   WIN;
-	}; // RTWDOG
-	static_assert(sizeof(RTWDOG)==4*sizeof(unsigned), "Incorrect ARM::NXP::Timers::WDOGs::RTWDOG size");
+	}; // RTWDog
+	static_assert(sizeof(RTWDog)==4*sizeof(unsigned), "Incorrect ARM::NXP::Timers::WDogs::RTWDog size");
 
-} // namespace ARM::NXP::Timers::WDOGs
+} // namespace ARM::NXP::Timers::WDogs
 
-static volatile ARM::NXP::Timers::WDOGs::FieldCS    &CS    = ARM::NXP::Timers::WDOGs::rtwDog.CS;
-static volatile ARM::NXP::Timers::WDOGs::FieldCNT   &CNT   = ARM::NXP::Timers::WDOGs::rtwDog.CNT;
-static volatile ARM::NXP::Timers::WDOGs::FieldTOVAL &TOVAL = ARM::NXP::Timers::WDOGs::rtwDog.TOVAL;
-static volatile ARM::NXP::Timers::WDOGs::FieldWIN   &WIN   = ARM::NXP::Timers::WDOGs::rtwDog.WIN;
+static volatile ARM::NXP::Timers::WDogs::FieldCS    &WDOG3_CS    = ARM::NXP::Timers::WDogs::wDog3.CS;
+static volatile ARM::NXP::Timers::WDogs::FieldCNT   &WDOG3_CNT   = ARM::NXP::Timers::WDogs::wDog3.CNT;
+static volatile ARM::NXP::Timers::WDogs::FieldTOVAL &WDOG3_TOVAL = ARM::NXP::Timers::WDogs::wDog3.TOVAL;
+static volatile ARM::NXP::Timers::WDogs::FieldWIN   &WDOG3_WIN   = ARM::NXP::Timers::WDogs::wDog3.WIN;
 
-#endif // ARM_NXP_Timers_WDOGs_RTWDOG_hh
+static volatile ARM::NXP::Timers::WDogs::FieldCS    &RTWDOG_CS    = ARM::NXP::Timers::WDogs::rtwDog.CS;
+static volatile ARM::NXP::Timers::WDogs::FieldCNT   &RTWDOG_CNT   = ARM::NXP::Timers::WDogs::rtwDog.CNT;
+static volatile ARM::NXP::Timers::WDogs::FieldTOVAL &RTWDOG_TOVAL = ARM::NXP::Timers::WDogs::rtwDog.TOVAL;
+static volatile ARM::NXP::Timers::WDogs::FieldWIN   &RTWDOG_WIN   = ARM::NXP::Timers::WDogs::rtwDog.WIN;
+
+#endif // ARM_NXP_Timers_WDogs_RTWDog_hh
