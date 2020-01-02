@@ -499,8 +499,8 @@ namespace ARM::NXP::CCMs {
 		FieldCCOSR  CCOSR;  ///< CCM Clock Output Source Register
 		FieldCGPR   CGPR;   ///< CCM General Purpose Register
 
-#define CCGR_Regs(CCGR_Regs)          \
-		struct CCGR_Regs {            \
+#define CCGRs(CCGRs)         \
+		struct CCGRs {       \
 			FieldCCGR CCGR0; \
 			FieldCCGR CCGR1; \
 			FieldCCGR CCGR2; \
@@ -509,9 +509,9 @@ namespace ARM::NXP::CCMs {
 			FieldCCGR CCGR5; \
 			FieldCCGR CCGR6; \
 		} // struct
-        CCGR_Regs(CCGR_Regs); ///< Declare a `struct` called "CCGR_Regs" as `#define`d by `CCGR_Regs()`
+        CCGRs(CCGRs); ///< Declare a `struct` called "CCGRs" as `#define`d by `CCGRs()`
         union {
-        	CCGR_Regs();      ///< Define an anonymous `struct` as `#define`d by `CCGR_Regs()`
+        	CCGRs();  ///< Define an anonymous `struct` as `#define`d by `CCGRs()`
         	/// Now define an overlay for array access to all CCGRs
         	Bit::Array::Update<CCGR_Regs, unsigned, 2, 0, CCGRs> CCGR;
         }; // union
