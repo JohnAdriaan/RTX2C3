@@ -16,11 +16,7 @@ namespace ARM::NXP::CCMs {
 
 	struct CCM;
 
-	struct XTALOSC;
-
 	extern volatile CCM ccm;
-
-	extern volatile XTALOSC xtalOsc;
 
 } // namespace ARM::NXP::CCMs
 

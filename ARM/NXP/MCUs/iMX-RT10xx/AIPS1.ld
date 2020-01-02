@@ -60,6 +60,8 @@ SECTIONS
 
     _ZN3ARM3NXP4CCMs3ccmE                 = . + 0xFC000; /* ARM::NXP::CCMs::ccm */
 
+    _ZN3ARM3NXP8XtalOscs7xtalOscE         = . + 0xD8150; /* ARM::NXP::XtalOscs::xtalOsc */
+
     _ZN3ARM3NXP4CSUs4csuE                 = . + 0xDC000; /* ARM::NXP::CSUs::csu */
 
   } >AIPS1

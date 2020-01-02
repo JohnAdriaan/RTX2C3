@@ -15,11 +15,14 @@ namespace ARM {
 		namespace ISRs {
 		} // namespace ISRs
 
+		namespace Flash {
+		} // namespace Flash
+
 		namespace CCMs {
 		} // namespace CCMs
 
-		namespace Flash {
-		} // namespace Flash
+		namespace XtalOscs {
+		} // namespace XtalOscs
 
 		namespace Timers {
 		} // namespace Timers
@@ -27,8 +30,10 @@ namespace ARM {
 		class _NXP_ : private _ARM_ {
 		}; // _NXP_
 
+		/// `NXP` entry point
 		void Start();
 
+		/// Board initialisation routine
 		void Init();
 
 	} // namespace NXP
