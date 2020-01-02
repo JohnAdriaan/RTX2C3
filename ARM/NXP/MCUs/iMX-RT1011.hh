@@ -2,15 +2,22 @@
 ///
 /// \file ARM/NXP/MCUs/iMX-RT1011.hh
 ///
+/// This file is `#include`d by a "computed include" in `ARM/ARM.hh`.
+/// The compiler needs to be told which exact MCU to target.
+///
 
 #ifndef ARM_NXP_MCUs_iMX_RT1011_hh
 #define ARM_NXP_MCUs_iMX_RT1011_hh
 
+/// Include definitions for the i.MX RT10xx range
 #include <ARM/NXP/MCUs/iMX-RT10xx/iMX-RT10xx.hh>
 
-#define NXP_iMXRT1011
+#define NXP_iMXRT1011        ///< The specific processor for this build
 
-#define NXP_iMXRT10xx 0x11
+#define NXP_iMXRTxxxx 0x1011 ///< The variant of processor
+#define NXP_iMXRT1xxx  0x011 ///< The variant of processor
+#define NXP_iMXRT10xx   0x11 ///< The variant of processor
+#define NXP_iMXRT101x    0x1 ///< The variant of processor
 
 namespace ARM::NXP::Clocks {
 
@@ -29,7 +36,7 @@ namespace ARM::NXP::Clocks {
 	///
 	///     `CCM_CCGR5[4]  = CGR_ClockOn_Run;` using array indexing
 	///
-	/// But even better, with the below array you can write:
+	/// But even better, with the below array you can write (don't need to know _which_ CCGR!):
 	///
 	///     `CCM_CCGR[kpp_clk] = CGR_ClockOn_Run;`
 	///
