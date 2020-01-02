@@ -1,7 +1,6 @@
 // © 2019 John Adriaan. Licensed under the "3-clause BSD License"
 ///
-/// \file ARM/NXP/Clocks/Clocks.cc
+/// \file ARM/NXP/CCMs/CCM.cc
 ///
 
-#include "CCM.hh"
-#include "Analog.hh"
+#include "CCMs.hh"

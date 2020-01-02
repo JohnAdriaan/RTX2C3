@@ -1,16 +1,16 @@
 // © 2019 John Adriaan. Licensed under the "3-clause BSD License"
 ///
-/// \file ARM/NXP/Clocks/CCM.hh
+/// \file ARM/NXP/CCMs/CCM.hh
 ///
 
-#ifndef ARM_NXP_Clocks_CCM_hh
-#define ARM_NXP_Clocks_CCM_hh
+#ifndef ARM_NXP_CCMs_CCM_hh
+#define ARM_NXP_CCMs_CCM_hh
 
 #include <General/Bit.hh>
 
-#include "Clocks.hh"
+#include "CCMs.hh"
 
-namespace ARM::NXP::Clocks {
+namespace ARM::NXP::CCMs {
 
 	/// CCM Control Register
 	struct CCR {
@@ -67,46 +67,46 @@ namespace ARM::NXP::Clocks {
 	}; // CBCDR
 	typedef Field<CBCDR, unsigned> FieldCBCDR;
 
-	/// Clocks for `LPSPI_CLK_SEL`
-	enum LPSPI_Clocks {
+	/// CCMs for `LPSPI_CLK_SEL`
+	enum LPSPI_CCMs {
 		LPSPI_PLL3_PFD1 = 0b00,
 		LPSPI_PLL3_PFD0 = 0b01,
 		LPSPI_PLL2      = 0b10,
 		LPSPI_PLL2_PFD2 = 0b11
-	}; // LPSPI_Clocks
+	}; // LPSPI_CCMs
 
-	/// Clocks for `PERIPH_CLK2_SEL`
-	enum PeriphClk2_Clocks {
+	/// CCMs for `PERIPH_CLK2_SEL`
+	enum PeriphClk2_CCMs {
 		PeriphClk2_pll3_sw_clk    = 0b00,
 		PeriphClk2_osc_clk        = 0b01,
 		PeriphClk2_pll2_bypass_clk = 0b10
-	}; // PeriphClk2_Clocks
+	}; // PeriphClk2_CCMs
 
-	/// Clocks for `TRACE_CLK_SEL`
-	enum Trace_Clocks {
+	/// CCMs for `TRACE_CLK_SEL`
+	enum Trace_CCMs {
 		Trace_PLL2      = 0b00,
 		Trace_PLL2_PFD2 = 0b01,
 		Trace_PLL2_PFD0 = 0b10,
 		Trace_PLL2_PFD1 = 0b11
-	}; // Trace_Clocks
+	}; // Trace_CCMs
 
-	/// Clocks for `PRE_PERIPH_CLK_SEL`
-	enum PrePeriph_Clocks {
+	/// CCMs for `PRE_PERIPH_CLK_SEL`
+	enum PrePeriph_CCMs {
 		PrePeriph_PLL2      = 0b00,
 		PrePeriph_PLL3_PFD3 = 0b01,
 		PrePeriph_PLL2_PFD3 = 0b10,
 		PrePeriph_PLL6      = 0b11
-	}; // PrePeriph_Clocks
+	}; // PrePeriph_CCMs
 
 	/// CCM Bus Clock Multiplexer Register
 	struct CBCMR {
 		unsigned                    : 4;
-		unsigned LPSPI_CLK_SEL      : 2; ///< {LPSPI_Clocks} Selector for LPSPI clock multipleser
+		unsigned LPSPI_CLK_SEL      : 2; ///< {LPSPI_CCMs} Selector for LPSPI clock multipleser
 		unsigned                    : 6;
-		unsigned PERIPH_CLK2_SEL    : 2; ///< {PeriphClk2_Clocks} Selector for Peripheral Clk2 clock multiplexer
-		unsigned TRACE_CLK_SEL      : 2; ///< {Trace_Clocks} Selector for Trace clock multiplexer
+		unsigned PERIPH_CLK2_SEL    : 2; ///< {PeriphClk2_CCMs} Selector for Peripheral Clk2 clock multiplexer
+		unsigned TRACE_CLK_SEL      : 2; ///< {Trace_CCMs} Selector for Trace clock multiplexer
 		unsigned                    : 2;
-		unsigned PRE_PERIPH_CLK_SEL : 2; ///< {PrePeriph_Clocks} Selector for pre_periph clock multiplexer
+		unsigned PRE_PERIPH_CLK_SEL : 2; ///< {PrePeriph_CCMs} Selector for pre_periph clock multiplexer
 		unsigned                    : 3;
 		unsigned                    : 3;
 		unsigned LPSPI_PODF         : 4; ///< Divider for LPSPI
@@ -115,26 +115,26 @@ namespace ARM::NXP::Clocks {
 	}; // CBCMR
 	typedef Field<CBCMR, unsigned> FieldCBCMR;
 
-	/// PERCLK Clocks for `PERCLK_CLK_SEL`
-	enum PERCLK_Clocks {
+	/// PERCLK CCMs for `PERCLK_CLK_SEL`
+	enum PERCLK_CCMs {
 		PERCLK_ipg_clk_root = 0b0,
 		PERCLK_osc_clk      = 0b1
-	}; // PERCLK_Clocks
+	}; // PERCLK_CCMs
 
-	/// SAI Clocks for `SAI1_CLK_SEL` and `SAI3_CLK_SEL`
-	enum SAI_Clocks {
+	/// SAI CCMs for `SAI1_CLK_SEL` and `SAI3_CLK_SEL`
+	enum SAI_CCMs {
 		SAI_PLL3_PFD2   = 0b00,
 		SAI_pll3_sw_clk = 0b01,
 		SAI_PLL4        = 0b10
-	}; // SAI_Clocks
+	}; // SAI_CCMs
 
-	/// FlexSPI Clocks for `FLEXSPI_CLK_SEL`
-	enum FlexSPI_Clocks {
+	/// FlexSPI CCMs for `FLEXSPI_CLK_SEL`
+	enum FlexSPI_CCMs {
 		FlexSPI_PLL2        = 0b00,
 		FlexSPI_pll3_sw_clk = 0b01,
 		FlexSPI_PLL2_PFD2   = 0b10,
 		FlexSPI_PLL3_PFD0   = 0b11
-	}; // FlexSPI_Clocks
+	}; // FlexSPI_CCMs
 
 	/// FlexSPI Clock Sources for `FLEXSPI_CLK_SRC`
 	enum FlexSPI_Sources {
@@ -145,28 +145,28 @@ namespace ARM::NXP::Clocks {
 	/// CCM Serial Clock Multiplexer Register 1
 	struct CSCMR1 {
 		unsigned PERCLK_PODF     : 6; ///< Divider for perclk podf
-		unsigned PERCLK_CLK_SEL  : 1; ///< {PERCLK_Clocks} Selector for the perclk clock multiplexer
+		unsigned PERCLK_CLK_SEL  : 1; ///< {PERCLK_CCMs} Selector for the perclk clock multiplexer
 		unsigned                 : 3;
-		unsigned SAI1_CLK_SEL    : 2; ///< {SAI_Clocks} Selector for sai1 clock multiplexer
+		unsigned SAI1_CLK_SEL    : 2; ///< {SAI_CCMs} Selector for sai1 clock multiplexer
 		unsigned                 : 2;
-		unsigned SAI3_CLK_SEL    : 2; ///< {SAI_Clocks} Selector for sai3 clock multiplexer
+		unsigned SAI3_CLK_SEL    : 2; ///< {SAI_CCMs} Selector for sai3 clock multiplexer
 		unsigned                 : 2;
 		unsigned                 : 5;
 		unsigned FLEXSPI_PODF    : 3; ///< Divider for slexspi clock root
 		unsigned                 : 3;
-		unsigned FLEXSPI_CLK_SEL : 2; ///< {FlexSPI_Clocks} Selector for slexspi clock multiplexer
+		unsigned FLEXSPI_CLK_SEL : 2; ///< {FlexSPI_CCMs} Selector for slexspi clock multiplexer
 		unsigned FLEXSPI_CLK_SRC : 1; ///< {FlexSPI_Sources} Select source of flexspi_clk_root
 		unsigned                 : 0;
 	}; // CSCMR1
 	typedef Field<CSCMR1, unsigned> FieldCSCMR1;
 
-	/// FlexIO Clocks for `FLEXIO1_CLK_SEL`
-	enum FlexIO_Clocks {
+	/// FlexIO CCMs for `FLEXIO1_CLK_SEL`
+	enum FlexIO_CCMs {
 		FlexIO_PLL4        = 0b00,
 		FlexIO_PLL3_PFD2   = 0b01,
 		FlexIO_PLL2        = 0b10,
 		FlexIO_pll3_sw_clk = 0b11
-	}; // FlexIO_Clocks
+	}; // FlexIO_CCMs
 
 	/// Valid dividers for `ADC_ACLK_PODF`
 	enum ADC_PODFs {
@@ -180,7 +180,7 @@ namespace ARM::NXP::Clocks {
 		unsigned                 : 2;
 		unsigned                 : 8;
 		unsigned                 : 9;
-		unsigned FLEXIO1_CLK_SEL : 2; ///< {FlexIO_Clocks} Selector for FlexIO1 clock multiplexer
+		unsigned FLEXIO1_CLK_SEL : 2; ///< {FlexIO_CCMs} Selector for FlexIO1 clock multiplexer
 		unsigned                 : 6;
 		unsigned ADC_ACLK_PODF   : 4; ///< {ADC_PODFs} Divider for ADC alt_clk
 		unsigned ADC_ACLK_EN     : 1; ///< Enable ADC alt_clk
@@ -188,17 +188,17 @@ namespace ARM::NXP::Clocks {
 	}; // CSCMR2
 	typedef Field<CSCMR2, unsigned> FieldCSCMR2;
 
-	/// UART Clocks for `UART_CLK_SEL`
-	enum UART_Clocks {
+	/// UART CCMs for `UART_CLK_SEL`
+	enum UART_CCMs {
 		UART_pll3_80m     = 0b00,
 		UART_osc_clk      = 0b01,
 		UART_per_clk_root = 0b10
-	}; // UART_Clocks
+	}; // UART_CCMs
 
 	/// CCM Serial Clock Divider Register 1
 	struct CSCDR1 {
 		      unsigned UART_CLK_PODF : 6; ///< Divider for uart clock podf
-		      unsigned UART_CLK_SEL  : 2; ///< {UART_Clocks} Selector for UART clock multiplexer
+		      unsigned UART_CLK_SEL  : 2; ///< {UART_CCMs} Selector for UART clock multiplexer
 		      unsigned               : 3;
 		      unsigned               : 3;
 		      unsigned               : 2;
@@ -224,19 +224,19 @@ namespace ARM::NXP::Clocks {
 	}; // CS1CDR
 	typedef Field<CS1CDR, unsigned> FieldCS1CDR;
 
-	/// SPDIF Clocks for `SPDIF0_CLK_SEL`
-	enum SPDIF_Clocks {
+	/// SPDIF CCMs for `SPDIF0_CLK_SEL`
+	enum SPDIF_CCMs {
 		SPDIF_PLL4        = 0b00,
 		SPDIF_PLL3_PFD2   = 0b01,
 		SPDIF_pll3_sw_clk = 0b11
-	}; // SPDIF_Clocks
+	}; // SPDIF_CCMs
 
 	/// CCM D1 Clock Divider Register
 	struct CDCDR {
 		unsigned                 : 7;
 		unsigned                 : 8;
 		unsigned                 : 5;
-		unsigned SPDIF0_CLK_SEL  : 2; ///< {SPDIF_Clocks} Selector for spdif0 clock multiplexer
+		unsigned SPDIF0_CLK_SEL  : 2; ///< {SPDIF_CCMs} Selector for spdif0 clock multiplexer
 		unsigned SPIDF0_CLK_PODF : 3; ///< Divider for spdif0 clock podf
 		unsigned SPDIF0_CLK_PRED : 3; ///< Divider for spdif0 clock pred
 		unsigned                 : 4;
@@ -244,17 +244,17 @@ namespace ARM::NXP::Clocks {
 	}; // CDCDR
 	typedef Field<CDCDR, unsigned> FieldCDCDR;
 
-	/// LPI2C Clocks for `LPI2C_CLK_SEL`
-	enum LPI2C_Clocks {
+	/// LPI2C CCMs for `LPI2C_CLK_SEL`
+	enum LPI2C_CCMs {
 		LPI2C_pll3_60m = 0b0,
 		LPI2C_osc_clk  = 0b1
-	}; // LPI2C_Clocks
+	}; // LPI2C_CCMs
 
 	/// CCM Serial Clock Divider Register 2
 	struct CSCDR2 {
 		unsigned                : 9;
 		unsigned                : 9;
-		unsigned LPI2C_CLK_SEL  : 1; ///< {LPI2C_Clocks} Selector for the LPI2C clock multiplexor
+		unsigned LPI2C_CLK_SEL  : 1; ///< {LPI2C_CCMs} Selector for the LPI2C clock multiplexor
 		unsigned LPI2C_CLK_PODF : 6; ///< Divider for lpi2c clock podf
 		unsigned                : 7;
 		unsigned                : 0;
@@ -296,7 +296,7 @@ namespace ARM::NXP::Clocks {
 		unsigned LPM                : 2; ///< {LPMs} Low Power Mode on dsm_request
 		unsigned                    : 1;
 		unsigned                    : 2;
-		unsigned ARM_CLK_DIS_ON_LPM : 1; ///< ARM Clocks Disabled On Wait mode
+		unsigned ARM_CLK_DIS_ON_LPM : 1; ///< ARM CCMs Disabled On Wait mode
 		unsigned SBYOS              : 1; ///< Standby Clock Oscillator
 		unsigned DIS_REF_OSC        : 1; ///< Disable Reference Oscillator
 		unsigned VSTBY              : 1; ///< Voltage Standby request
@@ -354,8 +354,8 @@ namespace ARM::NXP::Clocks {
 	}; // CIMR
 	typedef Field<CIMR, unsigned> FieldCIMR;
 
-	/// Clocks for `CLKO1_SEL`
-	enum CLKO1_Clocks {
+	/// CCMs for `CLKO1_SEL`
+	enum CLKO1_CCMs {
 		CLKO1_pll3_sw_clk_Div2 = 0b0000,
 		CLKO1_PLL2_Div2        = 0b0001,
 		CLKO1_ENET_PLL_Div2    = 0b0010,
@@ -363,7 +363,7 @@ namespace ARM::NXP::Clocks {
 		CLKO1_ipg_clk_root     = 0b1100,
 		CLKO1_perclk_root      = 0b1101,
 		CLKO1_pll4_main_clk    = 0b1111
-	}; // CLKO1_Clocks
+	}; // CLKO1_CCMs
 
 	/// Outputs for `CLKO1_OUT_SEL`
 	enum CLKO1_Outputs {
@@ -371,8 +371,8 @@ namespace ARM::NXP::Clocks {
 		CLKO1_Output_from_CLKO2 = 0b1
 	}; // CLKO1_Outputs
 
-	/// Clocks for `CLKO2_SEL`
-	enum CLKO2_Clocks {
+	/// CCMs for `CLKO2_SEL`
+	enum CLKO2_CCMs {
 		CLKO2_lpi2c_clk_root   = 0b00110,
 		CLKO2_osc_clk          = 0b01110,
 		CLKO2_lpspi_clk_root   = 0b10000,
@@ -382,16 +382,16 @@ namespace ARM::NXP::Clocks {
 		CLKO2_flexspi_clk_root = 0b11011,
 		CLKO2_uart_clk_root    = 0b11100,
 		CLKO2_spidf0_clk_root  = 0b11101
-	}; // CLKO2_Clocks
+	}; // CLKO2_CCMs
 
 	/// CCM Clock Output Source Register
 	struct CCOSR {
-		      unsigned CLKO1_SEL     : 4; ///< {CLKO1_Clocks} Selection of clock to be generated on CCM_CLKO1
+		      unsigned CLKO1_SEL     : 4; ///< {CLKO1_CCMs} Selection of clock to be generated on CCM_CLKO1
 		      unsigned CLKO1_DIV     : 3; ///< Divider for CCM_CLKO1
 		      unsigned CLKO1_EN      : 1; ///< Enable CCM_CLKO1
 		      unsigned CLKO1_OUT_SEL : 1; ///< {CLKO1_Outputs} CCM_CLKO1 output reflects which CCM_CLKO#
 		const unsigned               : 7;
-		      unsigned CLKO2_SEL     : 5; ///< {CLKO2_Clocks} Selection of clock to be generated on CCM_CLKO2
+		      unsigned CLKO2_SEL     : 5; ///< {CLKO2_CCMs} Selection of clock to be generated on CCM_CLKO2
 		      unsigned CLKO2_DIV     : 3; ///< Divider for CCM_CLKO2
 		      unsigned CLKO2_EN      : 1; ///< Enable CCM_CLKO2
 		const unsigned               : 7;
@@ -418,7 +418,7 @@ namespace ARM::NXP::Clocks {
 		const unsigned                        :  5;
 		      unsigned SYS_MEM_DS_CTRL        :  2; ///< System Memory DS Control {SysMemDSCtrls}
 		      unsigned FPL                    :  1; ///< Fast PLL enable
-		      unsigned INT_MEM_CLK_LPM        :  1; ///< Keep Memory Clocks on if Int pending and entering Low Power Mode
+		      unsigned INT_MEM_CLK_LPM        :  1; ///< Keep Memory CCMs on if Int pending and entering Low Power Mode
 		const unsigned                        : 14;
 		      unsigned                        :  0;
 	}; // CGPR
@@ -472,83 +472,83 @@ namespace ARM::NXP::Clocks {
 
 	/// Clock Controller Module
 	struct CCM {
-		volatile FieldCCR    CCR;    ///< CCM Control Register
-				 unsigned    x04;
-		volatile FieldCSR    CSR;    ///< CCM Status Register
-		volatile FieldCCSR   CCSR;   ///< CCM Clock Switcher Register
-				 unsigned    x10;
-		volatile FieldCBCDR  CBCDR;  ///< CCM Bus Clock Divider Register
-		volatile FieldCBCMR  CBCMR;  ///< CCM Bus Clock Multiplexer Register
-		volatile FieldCSCMR1 CSCMR1; ///< CCM Serial Clock Multiplexer Register 1
-		volatile FieldCSCMR2 CSCMR2; ///< CCM Serial Clock Multiplexer Register 2
-		volatile FieldCSCDR1 CSCDR1; ///< CCM Serial Clock Divider Register 1
-		volatile FieldCS1CDR CS1CDR; ///< CCM Clock Divider Register
-				 unsigned    x2C;
-		volatile FieldCDCDR  CDCDR;  ///< CCM D1 Clock Divider Register
-				 unsigned    x34;
-		volatile FieldCSCDR2 CSCDR2; ///< CCM Serial Clock Divider Register 2
-				 unsigned    x3C;
-				 unsigned    x40;
-				 unsigned    x44;
-		volatile FieldCDHIPR CDHIPR; ///< CCM Divider Handshake In-Process Register
-				 unsigned    x4C;
-				 unsigned    x50;
-		volatile FieldCLPCR  CLPCR;  ///< CCM Low Power Control Register
-		volatile FieldCISR   CISR;   ///< CCM Interrupt Status Register
-		volatile FieldCIMR   CIMR;   ///< CCM Interrupt Mask Register
-		volatile FieldCCOSR  CCOSR;  ///< CCM Clock Output Source Register
-		volatile FieldCGPR   CGPR;   ///< CCM General Purpose Register
+		FieldCCR    CCR;    ///< CCM Control Register
+		unsigned    x04;
+		FieldCSR    CSR;    ///< CCM Status Register
+		FieldCCSR   CCSR;   ///< CCM Clock Switcher Register
+		unsigned    x10;
+		FieldCBCDR  CBCDR;  ///< CCM Bus Clock Divider Register
+		FieldCBCMR  CBCMR;  ///< CCM Bus Clock Multiplexer Register
+		FieldCSCMR1 CSCMR1; ///< CCM Serial Clock Multiplexer Register 1
+		FieldCSCMR2 CSCMR2; ///< CCM Serial Clock Multiplexer Register 2
+		FieldCSCDR1 CSCDR1; ///< CCM Serial Clock Divider Register 1
+		FieldCS1CDR CS1CDR; ///< CCM Clock Divider Register
+		unsigned    x2C;
+		FieldCDCDR  CDCDR;  ///< CCM D1 Clock Divider Register
+		unsigned    x34;
+		FieldCSCDR2 CSCDR2; ///< CCM Serial Clock Divider Register 2
+		unsigned    x3C;
+		unsigned    x40;
+		unsigned    x44;
+		FieldCDHIPR CDHIPR; ///< CCM Divider Handshake In-Process Register
+		unsigned    x4C;
+		unsigned    x50;
+		FieldCLPCR  CLPCR;  ///< CCM Low Power Control Register
+		FieldCISR   CISR;   ///< CCM Interrupt Status Register
+		FieldCIMR   CIMR;   ///< CCM Interrupt Mask Register
+		FieldCCOSR  CCOSR;  ///< CCM Clock Output Source Register
+		FieldCGPR   CGPR;   ///< CCM General Purpose Register
 
 #define CCGR_Regs(CCGR_Regs)          \
 		struct CCGR_Regs {            \
-			volatile FieldCCGR CCGR0; \
-			volatile FieldCCGR CCGR1; \
-			volatile FieldCCGR CCGR2; \
-			volatile FieldCCGR CCGR3; \
-			volatile FieldCCGR CCGR4; \
-			volatile FieldCCGR CCGR5; \
-			volatile FieldCCGR CCGR6; \
+			FieldCCGR CCGR0; \
+			FieldCCGR CCGR1; \
+			FieldCCGR CCGR2; \
+			FieldCCGR CCGR3; \
+			FieldCCGR CCGR4; \
+			FieldCCGR CCGR5; \
+			FieldCCGR CCGR6; \
 		} // struct
         CCGR_Regs(CCGR_Regs); ///< Declare a `struct` called "CCGR_Regs" as `#define`d by `CCGR_Regs()`
         union {
         	CCGR_Regs();      ///< Define an anonymous `struct` as `#define`d by `CCGR_Regs()`
         	/// Now define an overlay for array access to all CCGRs
-        	volatile Bit::Array::Update<CCGR_Regs, unsigned, 2, 0, CCGRs> CCGR;
+        	Bit::Array::Update<CCGR_Regs, unsigned, 2, 0, CCGRs> CCGR;
         }; // union
 #undef CCGR_Regs // Don't leave this lying around
 
-		         unsigned    x84;
-		volatile FieldCMEOR  CMEOR;  ///< CCM Module Enable Override Register
+		unsigned    x84;
+		FieldCMEOR  CMEOR;  ///< CCM Module Enable Override Register
 	}; // CCM
-	static_assert(sizeof(CCM)==35*sizeof(unsigned), "Incorrect ARM::NXP::Clocks::CCM size");
+	static_assert(sizeof(CCM)==35*sizeof(unsigned), "Incorrect ARM::NXP::CCMs::CCM size");
 
-} // namespace ARM::NXP::Clocks
+} // namespace ARM::NXP::CCMs
 
-#define CCM_CCGR ARM::NXP::Clocks::ccm.CCGR ///< Allow direct access to `Bit::Array::Update<>` `ccm.CCGR`
+#define CCM_CCGR ARM::NXP::CCMs::ccm.CCGR ///< Allow direct access to `Bit::Array::Update<>` `ccm.CCGR`
 
-static volatile ARM::NXP::Clocks::FieldCCR    &CCM_CCR    = ARM::NXP::Clocks::ccm.CCR;
-static volatile ARM::NXP::Clocks::FieldCSR    &CCM_CSR    = ARM::NXP::Clocks::ccm.CSR;
-static volatile ARM::NXP::Clocks::FieldCCSR   &CCM_CCSR   = ARM::NXP::Clocks::ccm.CCSR;
-static volatile ARM::NXP::Clocks::FieldCBCDR  &CCM_CBCDR  = ARM::NXP::Clocks::ccm.CBCDR;
-static volatile ARM::NXP::Clocks::FieldCBCMR  &CCM_CBCMR  = ARM::NXP::Clocks::ccm.CBCMR;
-static volatile ARM::NXP::Clocks::FieldCSCMR1 &CCM_CSCMR1 = ARM::NXP::Clocks::ccm.CSCMR1;
-static volatile ARM::NXP::Clocks::FieldCSCMR2 &CCM_CSCMR2 = ARM::NXP::Clocks::ccm.CSCMR2;
-static volatile ARM::NXP::Clocks::FieldCS1CDR &CCM_CS1CDR = ARM::NXP::Clocks::ccm.CS1CDR;
-static volatile ARM::NXP::Clocks::FieldCDCDR  &CCM_CDCDR  = ARM::NXP::Clocks::ccm.CDCDR;
-static volatile ARM::NXP::Clocks::FieldCSCDR2 &CCM_CSCDR2 = ARM::NXP::Clocks::ccm.CSCDR2;
-static volatile ARM::NXP::Clocks::FieldCDHIPR &CCM_CDHIPR = ARM::NXP::Clocks::ccm.CDHIPR;
-static volatile ARM::NXP::Clocks::FieldCLPCR  &CCM_CLPCR  = ARM::NXP::Clocks::ccm.CLPCR;
-static volatile ARM::NXP::Clocks::FieldCISR   &CCM_CISR   = ARM::NXP::Clocks::ccm.CISR;
-static volatile ARM::NXP::Clocks::FieldCIMR   &CCM_CIMR   = ARM::NXP::Clocks::ccm.CIMR;
-static volatile ARM::NXP::Clocks::FieldCCOSR  &CCM_CCOSR  = ARM::NXP::Clocks::ccm.CCOSR;
-static volatile ARM::NXP::Clocks::FieldCGPR   &CCM_CGPR   = ARM::NXP::Clocks::ccm.CGPR;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR0  = ARM::NXP::Clocks::ccm.CCGR0;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR1  = ARM::NXP::Clocks::ccm.CCGR1;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR2  = ARM::NXP::Clocks::ccm.CCGR2;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR3  = ARM::NXP::Clocks::ccm.CCGR3;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR4  = ARM::NXP::Clocks::ccm.CCGR4;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR5  = ARM::NXP::Clocks::ccm.CCGR5;
-static volatile ARM::NXP::Clocks::FieldCCGR   &CCM_CCGR6  = ARM::NXP::Clocks::ccm.CCGR6;
-static volatile ARM::NXP::Clocks::FieldCMEOR  &CCM_CMEOR  = ARM::NXP::Clocks::ccm.CMEOR;
+static volatile ARM::NXP::CCMs::FieldCCR    &CCM_CCR    = ARM::NXP::CCMs::ccm.CCR;
+static volatile ARM::NXP::CCMs::FieldCSR    &CCM_CSR    = ARM::NXP::CCMs::ccm.CSR;
+static volatile ARM::NXP::CCMs::FieldCCSR   &CCM_CCSR   = ARM::NXP::CCMs::ccm.CCSR;
+static volatile ARM::NXP::CCMs::FieldCBCDR  &CCM_CBCDR  = ARM::NXP::CCMs::ccm.CBCDR;
+static volatile ARM::NXP::CCMs::FieldCBCMR  &CCM_CBCMR  = ARM::NXP::CCMs::ccm.CBCMR;
+static volatile ARM::NXP::CCMs::FieldCSCMR1 &CCM_CSCMR1 = ARM::NXP::CCMs::ccm.CSCMR1;
+static volatile ARM::NXP::CCMs::FieldCSCMR2 &CCM_CSCMR2 = ARM::NXP::CCMs::ccm.CSCMR2;
+static volatile ARM::NXP::CCMs::FieldCS1CDR &CCM_CS1CDR = ARM::NXP::CCMs::ccm.CS1CDR;
+static volatile ARM::NXP::CCMs::FieldCDCDR  &CCM_CDCDR  = ARM::NXP::CCMs::ccm.CDCDR;
+static volatile ARM::NXP::CCMs::FieldCSCDR2 &CCM_CSCDR2 = ARM::NXP::CCMs::ccm.CSCDR2;
+static volatile ARM::NXP::CCMs::FieldCDHIPR &CCM_CDHIPR = ARM::NXP::CCMs::ccm.CDHIPR;
+static volatile ARM::NXP::CCMs::FieldCLPCR  &CCM_CLPCR  = ARM::NXP::CCMs::ccm.CLPCR;
+static volatile ARM::NXP::CCMs::FieldCISR   &CCM_CISR   = ARM::NXP::CCMs::ccm.CISR;
+static volatile ARM::NXP::CCMs::FieldCIMR   &CCM_CIMR   = ARM::NXP::CCMs::ccm.CIMR;
+static volatile ARM::NXP::CCMs::FieldCCOSR  &CCM_CCOSR  = ARM::NXP::CCMs::ccm.CCOSR;
+static volatile ARM::NXP::CCMs::FieldCGPR   &CCM_CGPR   = ARM::NXP::CCMs::ccm.CGPR;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR0  = ARM::NXP::CCMs::ccm.CCGR0;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR1  = ARM::NXP::CCMs::ccm.CCGR1;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR2  = ARM::NXP::CCMs::ccm.CCGR2;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR3  = ARM::NXP::CCMs::ccm.CCGR3;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR4  = ARM::NXP::CCMs::ccm.CCGR4;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR5  = ARM::NXP::CCMs::ccm.CCGR5;
+static volatile ARM::NXP::CCMs::FieldCCGR   &CCM_CCGR6  = ARM::NXP::CCMs::ccm.CCGR6;
+static volatile ARM::NXP::CCMs::FieldCMEOR  &CCM_CMEOR  = ARM::NXP::CCMs::ccm.CMEOR;
 
-#endif // ARM_NXP_Clocks_CCM_hh
+#endif // ARM_NXP_CCMs_CCM_hh
