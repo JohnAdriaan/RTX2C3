@@ -3,6 +3,7 @@
 /// \file ARM/NXP/CCMs/Analogs/Analogs.cc
 ///
 
+#include "PFD.hh"
 #include "Misc0.hh"
 #include "Misc1.hh"
 #include "Misc2.hh"
