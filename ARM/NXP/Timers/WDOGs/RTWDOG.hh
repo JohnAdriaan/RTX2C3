@@ -98,10 +98,10 @@ namespace ARM::NXP::Timers::WDOGs {
 	typedef Field<WIN, unsigned> FieldWIN;
 
 	struct RTWDOG {
-		volatile FieldCS    CS;
-		volatile FieldCNT   CNT;
-		volatile FieldTOVAL TOVAL;
-		volatile FieldWIN   WIN;
+		FieldCS    CS;
+		FieldCNT   CNT;
+		FieldTOVAL TOVAL;
+		FieldWIN   WIN;
 	}; // RTWDOG
 	static_assert(sizeof(RTWDOG)==4*sizeof(unsigned), "Incorrect ARM::NXP::Timers::WDOGs::RTWDOG size");
 

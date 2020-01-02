@@ -238,28 +238,28 @@ namespace SCBs {
 
     /// System Control Block
 	struct SCB : private _SCB_ {
-		volatile FieldCPUID CPUID; ///< CPU Identification register
-		volatile FieldICSR  ICSR;  ///< Interrupt Control and Status Register
-		volatile FieldVTOR  VTOR;  ///< Vector Table Offset Register
-		volatile FieldAIRCR AIRCR; ///< Application Interrupt and Reset Control Register
-		volatile FieldSCR   SCR;   ///< System Control Register
-		volatile FieldCCR   CCR;   ///< Configuration and Control Register
-		volatile FieldSHPR1 SHPR1; ///< System Handler Priority Register 1
-		volatile FieldSHPR2 SHPR2; ///< System Handler Priority Register 2
-		volatile FieldSHPR3 SHPR3; ///< System Handler Priority Register 3
-		volatile FieldSHCSR SHCSR; ///< System Handler Control and State Register
+		FieldCPUID CPUID; ///< CPU Identification register
+		FieldICSR  ICSR;  ///< Interrupt Control and Status Register
+		FieldVTOR  VTOR;  ///< Vector Table Offset Register
+		FieldAIRCR AIRCR; ///< Application Interrupt and Reset Control Register
+		FieldSCR   SCR;   ///< System Control Register
+		FieldCCR   CCR;   ///< Configuration and Control Register
+		FieldSHPR1 SHPR1; ///< System Handler Priority Register 1
+		FieldSHPR2 SHPR2; ///< System Handler Priority Register 2
+		FieldSHPR3 SHPR3; ///< System Handler Priority Register 3
+		FieldSHCSR SHCSR; ///< System Handler Control and State Register
 		union {
-			volatile struct CFSR CFSR;     ///< Configurable Fault Status Register
+			struct CFSR CFSR;     ///< Configurable Fault Status Register
 			struct {
-				volatile FieldMMFSR MMFSR; ///< MemManage Fault Status Register
-				volatile FieldBFSR  BFSR;  ///< BusFault Status Register
-				volatile FieldUFSR  UFSR;  ///< UsageFault Status Register
+				FieldMMFSR MMFSR; ///< MemManage Fault Status Register
+				FieldBFSR  BFSR;  ///< BusFault Status Register
+				FieldUFSR  UFSR;  ///< UsageFault Status Register
 			}; // struct
 		}; // union
-		volatile FieldHFSR  HFSR;  ///< HardFault Status Register
-		         unsigned   x30;
-		volatile AddrReg    MMFAR; ///< MemManage Address Register
-		volatile AddrReg    BFAR;  ///< BusFault Address Register
+		FieldHFSR  HFSR;  ///< HardFault Status Register
+		unsigned   x30;
+		AddrReg    MMFAR; ///< MemManage Address Register
+		AddrReg    BFAR;  ///< BusFault Address Register
 	}; // SCB
 	static_assert(sizeof(SCB)==15*sizeof(unsigned), "Incorrect ARM::SCBs::SCB size");
 

@@ -24,7 +24,7 @@ namespace ARM::SCBs {
 	/// See `SCBs/SCB.hh` for definitions
 	struct SCB;
 
-	extern SCB scb;
+	extern volatile SCB scb;
 
 } // namespace ARM::SCBs
 

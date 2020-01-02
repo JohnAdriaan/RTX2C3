@@ -22,11 +22,11 @@ namespace ARM::NVICs {
 	/// See `NVICs/NVIC.hh` for definitions
 	struct NVIC;
 
-	typedef volatile unsigned TypeSTIR;
+	typedef unsigned TypeSTIR;
 
-	extern NVIC nvic;
+	extern volatile NVIC nvic;
 
-	extern TypeSTIR stir; // Write only
+	extern volatile TypeSTIR stir; ///< Note: Write only
 
 	// These are the "hook" functions for each of the IRQs.
 	// The architecture-specific linker script provides the mapping between the

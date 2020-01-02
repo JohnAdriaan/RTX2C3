@@ -19,13 +19,13 @@ namespace ARM::NXP::Timers {
 
 		struct RTWDOG;
 
-		extern WDOG wDog1;
+		extern volatile WDOG wDog1;
 
-		extern WDOG wDog2;
+		extern volatile WDOG wDog2;
 
-		extern RTWDOG wDog3;
+		extern volatile RTWDOG wDog3;
 
-		extern RTWDOG rtwDog; ///< Alias for `wDog3`
+		extern volatile RTWDOG rtwDog; ///< Alias for `wDog3`
 
 	} // namespace WDOGs
 

@@ -50,174 +50,174 @@ namespace NVICs {
 
 	/// Nested Vectored Interrupt Controller
 	struct NVIC : private _NVIC_ {
-#define ISERs(ISERs)                  \
-		struct ISERs {                \
-			volatile FieldISER ISER0; \
-			volatile FieldISER ISER1; \
-			volatile FieldISER ISER2; \
-			volatile FieldISER ISER3; \
-			volatile FieldISER ISER4; \
-			volatile FieldISER ISER5; \
-			volatile FieldISER ISER6; \
-			volatile FieldISER ISER7; \
+#define ISERs(ISERs)         \
+		struct ISERs {       \
+			FieldISER ISER0; \
+			FieldISER ISER1; \
+			FieldISER ISER2; \
+			FieldISER ISER3; \
+			FieldISER ISER4; \
+			FieldISER ISER5; \
+			FieldISER ISER6; \
+			FieldISER ISER7; \
 		} // struct
-		ISERs(ISERs); // Declare a struct called "ISERs" as `#define`d by `ISERs()`
+		ISERs(ISERs); ///< Declare a struct called "ISERs" as `#define`d by `ISERs()`
 		union {
-			ISERs();  // Define an anonymous struct as `#define`d by `ISERS()`
-			volatile Bit::Array::Write<ISERs, bit, 1, 0, IRQs> ISER; ///< Interrupt Set-Enable Register
+			ISERs();  ///< Define an anonymous struct as `#define`d by `ISERS()`
+			Bit::Array::Write<ISERs, bit, 1, 0, IRQs> ISER; ///< Interrupt Set-Enable Register
 		}; // union
 #undef ISERs // Don't leave this lying around
 
 		unsigned x020[24]; // Reserved
 
-#define ICERs(ICERs)                  \
-		struct ICERs {                \
-			volatile FieldICER ICER0; \
-			volatile FieldICER ICER1; \
-			volatile FieldICER ICER2; \
-			volatile FieldICER ICER3; \
-			volatile FieldICER ICER4; \
-			volatile FieldICER ICER5; \
-			volatile FieldICER ICER6; \
-			volatile FieldICER ICER7; \
+#define ICERs(ICERs)         \
+		struct ICERs {       \
+			FieldICER ICER0; \
+			FieldICER ICER1; \
+			FieldICER ICER2; \
+			FieldICER ICER3; \
+			FieldICER ICER4; \
+			FieldICER ICER5; \
+			FieldICER ICER6; \
+			FieldICER ICER7; \
 		} // struct
 		ICERs(ICERs); // Declare a struct called "ICERs" as `#define`d by `ICERs()`
 		union {
 			ICERs(); // Define an anonymous struct as `#define`d by `ICERs()`
-			volatile Bit::Array::Write<ICERs, bit, 1, 0, IRQs> ICER; ///< Interrupt Clear-Enable Register
+			Bit::Array::Write<ICERs, bit, 1, 0, IRQs> ICER; ///< Interrupt Clear-Enable Register
 		}; // union
 #undef ICERs // Don't leave this lying around
 
 		unsigned x0A0[24]; // Reserved
 
-#define ISPRs(ISPRs)                  \
-		struct ISPRs {                \
-			volatile FieldISPR ISPR0; \
-			volatile FieldISPR ISPR1; \
-			volatile FieldISPR ISPR2; \
-			volatile FieldISPR ISPR3; \
-			volatile FieldISPR ISPR4; \
-			volatile FieldISPR ISPR5; \
-			volatile FieldISPR ISPR6; \
-			volatile FieldISPR ISPR7; \
+#define ISPRs(ISPRs)         \
+		struct ISPRs {       \
+			FieldISPR ISPR0; \
+			FieldISPR ISPR1; \
+			FieldISPR ISPR2; \
+			FieldISPR ISPR3; \
+			FieldISPR ISPR4; \
+			FieldISPR ISPR5; \
+			FieldISPR ISPR6; \
+			FieldISPR ISPR7; \
 		} // struct
 		ISPRs(ISPRs); // Declare a struct called "ISPRs" as `#define`d by `ISPRs()`
 		union {
 			ISPRs(); // Define an anonymous struct as `#define`d by `ISPRs()`
-			volatile Bit::Array::Write<ISPRs, bit, 1, 0, IRQs> ISPR; ///< Interrupt Set-Pending Register
+			Bit::Array::Write<ISPRs, bit, 1, 0, IRQs> ISPR; ///< Interrupt Set-Pending Register
 		}; // union
 #undef ISPRs // Don't leave this lying around
 
 		unsigned x120[24]; // Reserved
 
-#define ICPRs(ICPRs)                  \
-		struct ICPRs {                \
-			volatile FieldICPR ICPR0; \
-			volatile FieldICPR ICPR1; \
-			volatile FieldICPR ICPR2; \
-			volatile FieldICPR ICPR3; \
-			volatile FieldICPR ICPR4; \
-			volatile FieldICPR ICPR5; \
-			volatile FieldICPR ICPR6; \
-			volatile FieldICPR ICPR7; \
+#define ICPRs(ICPRs)         \
+		struct ICPRs {       \
+			FieldICPR ICPR0; \
+			FieldICPR ICPR1; \
+			FieldICPR ICPR2; \
+			FieldICPR ICPR3; \
+			FieldICPR ICPR4; \
+			FieldICPR ICPR5; \
+			FieldICPR ICPR6; \
+			FieldICPR ICPR7; \
 		} // struct
 		ICPRs(ICPRs); // Declare a struct called "ICPRs" as `#define`d by `ICPRs()`
 		union {
 			ICPRs(); // Define an anonymous struct as `#define`d by `ICPRs()`
-			volatile Bit::Array::Write<ICPRs, bit, 1, 0, IRQs> ICPR; ///< Interrupt Clear-Pending Register
+			Bit::Array::Write<ICPRs, bit, 1, 0, IRQs> ICPR; ///< Interrupt Clear-Pending Register
 		}; // union
 #undef ICPRs // Don't leave this lying around
 
 		unsigned x1A0[24]; // Reserved
 
-#define IABRs(IABRs)                  \
-		struct IABRs {                \
-			volatile FieldIABR IABR0; \
-			volatile FieldIABR IABR1; \
-			volatile FieldIABR IABR2; \
-			volatile FieldIABR IABR3; \
-			volatile FieldIABR IABR4; \
-			volatile FieldIABR IABR5; \
-			volatile FieldIABR IABR6; \
-			volatile FieldIABR IABR7; \
+#define IABRs(IABRs)         \
+		struct IABRs {       \
+			FieldIABR IABR0; \
+			FieldIABR IABR1; \
+			FieldIABR IABR2; \
+			FieldIABR IABR3; \
+			FieldIABR IABR4; \
+			FieldIABR IABR5; \
+			FieldIABR IABR6; \
+			FieldIABR IABR7; \
 		} // struct
 		IABRs(IABRs); // Declare a struct called "IABRs" as `#define`d by `IABRs()`
 		union {
 			IABRs(); // Define an anonymous struct as `#define`d by `IABRs()`
-			volatile Bit::Array::Read<IABRs, const bit, 1, 0, IRQs> IABR; ///< Interrupt Active Bit Register
+			Bit::Array::Read<IABRs, const bit, 1, 0, IRQs> IABR; ///< Interrupt Active Bit Register
 		}; // union
 #undef IABRs // Don't leave this lying around
 
 		unsigned      x220[24]; // Reserved
 		unsigned      x280[32]; // Reserved
 
-#define IPRs(IPRs)                   \
-		struct IPRs {                \
-			volatile FieldIPR IPR0;  \
-			volatile FieldIPR IPR1;  \
-			volatile FieldIPR IPR2;  \
-			volatile FieldIPR IPR3;  \
-			volatile FieldIPR IPR4;  \
-			volatile FieldIPR IPR5;  \
-			volatile FieldIPR IPR6;  \
-			volatile FieldIPR IPR7;  \
-			volatile FieldIPR IPR8;  \
-			volatile FieldIPR IPR9;  \
-			volatile FieldIPR IPR10; \
-			volatile FieldIPR IPR11; \
-			volatile FieldIPR IPR12; \
-			volatile FieldIPR IPR13; \
-			volatile FieldIPR IPR14; \
-			volatile FieldIPR IPR15; \
-			volatile FieldIPR IPR16; \
-			volatile FieldIPR IPR17; \
-			volatile FieldIPR IPR18; \
-			volatile FieldIPR IPR19; \
-			volatile FieldIPR IPR20; \
-			volatile FieldIPR IPR21; \
-			volatile FieldIPR IPR22; \
-			volatile FieldIPR IPR23; \
-			volatile FieldIPR IPR24; \
-			volatile FieldIPR IPR25; \
-			volatile FieldIPR IPR26; \
-			volatile FieldIPR IPR27; \
-			volatile FieldIPR IPR28; \
-			volatile FieldIPR IPR29; \
-			volatile FieldIPR IPR30; \
-			volatile FieldIPR IPR31; \
-			volatile FieldIPR IPR32; \
-			volatile FieldIPR IPR33; \
-			volatile FieldIPR IPR34; \
-			volatile FieldIPR IPR35; \
-			volatile FieldIPR IPR36; \
-			volatile FieldIPR IPR37; \
-			volatile FieldIPR IPR38; \
-			volatile FieldIPR IPR39; \
-			volatile FieldIPR IPR40; \
-			volatile FieldIPR IPR41; \
-			volatile FieldIPR IPR42; \
-			volatile FieldIPR IPR43; \
-			volatile FieldIPR IPR44; \
-			volatile FieldIPR IPR45; \
-			volatile FieldIPR IPR46; \
-			volatile FieldIPR IPR47; \
-			volatile FieldIPR IPR48; \
-			volatile FieldIPR IPR49; \
-			volatile FieldIPR IPR50; \
-			volatile FieldIPR IPR51; \
-			volatile FieldIPR IPR52; \
-			volatile FieldIPR IPR53; \
-			volatile FieldIPR IPR54; \
-			volatile FieldIPR IPR55; \
-			volatile FieldIPR IPR56; \
-			volatile FieldIPR IPR57; \
-			volatile FieldIPR IPR58; \
-			volatile FieldIPR IPR59; \
+#define IPRs(IPRs)          \
+		struct IPRs {       \
+			FieldIPR IPR0;  \
+			FieldIPR IPR1;  \
+			FieldIPR IPR2;  \
+			FieldIPR IPR3;  \
+			FieldIPR IPR4;  \
+			FieldIPR IPR5;  \
+			FieldIPR IPR6;  \
+			FieldIPR IPR7;  \
+			FieldIPR IPR8;  \
+			FieldIPR IPR9;  \
+			FieldIPR IPR10; \
+			FieldIPR IPR11; \
+			FieldIPR IPR12; \
+			FieldIPR IPR13; \
+			FieldIPR IPR14; \
+			FieldIPR IPR15; \
+			FieldIPR IPR16; \
+			FieldIPR IPR17; \
+			FieldIPR IPR18; \
+			FieldIPR IPR19; \
+			FieldIPR IPR20; \
+			FieldIPR IPR21; \
+			FieldIPR IPR22; \
+			FieldIPR IPR23; \
+			FieldIPR IPR24; \
+			FieldIPR IPR25; \
+			FieldIPR IPR26; \
+			FieldIPR IPR27; \
+			FieldIPR IPR28; \
+			FieldIPR IPR29; \
+			FieldIPR IPR30; \
+			FieldIPR IPR31; \
+			FieldIPR IPR32; \
+			FieldIPR IPR33; \
+			FieldIPR IPR34; \
+			FieldIPR IPR35; \
+			FieldIPR IPR36; \
+			FieldIPR IPR37; \
+			FieldIPR IPR38; \
+			FieldIPR IPR39; \
+			FieldIPR IPR40; \
+			FieldIPR IPR41; \
+			FieldIPR IPR42; \
+			FieldIPR IPR43; \
+			FieldIPR IPR44; \
+			FieldIPR IPR45; \
+			FieldIPR IPR46; \
+			FieldIPR IPR47; \
+			FieldIPR IPR48; \
+			FieldIPR IPR49; \
+			FieldIPR IPR50; \
+			FieldIPR IPR51; \
+			FieldIPR IPR52; \
+			FieldIPR IPR53; \
+			FieldIPR IPR54; \
+			FieldIPR IPR55; \
+			FieldIPR IPR56; \
+			FieldIPR IPR57; \
+			FieldIPR IPR58; \
+			FieldIPR IPR59; \
 		} // struct
 		IPRs(IPRs); // Declare a struct called "IPRs" as `#define`d by `IPRs()`
 		union {
 			IPRs();  // Define an anonymous struct as `#define`d by `IPRs()`
-			volatile byte IPR[60*4]; ///< Interrupt Pending Register
+			byte IPR[60*4]; ///< Interrupt Pending Register
 		}; // union
 #undef IPRs // Don't leave this lying around
 

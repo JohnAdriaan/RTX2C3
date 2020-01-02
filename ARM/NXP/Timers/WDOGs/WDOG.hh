@@ -63,12 +63,12 @@ namespace ARM::NXP::Timers::WDOGs {
 	typedef Field<WMCR, word> FieldWMCR;
 
 	struct WDOG {
-		volatile FieldWCR  WCR;  ///< Watchdog Control Register
-		volatile WSRs      WSR;  ///< Watchdog Service Register
-		volatile FieldWRSR WRSR; ///< Watchdog Reset Status Register
-		volatile FieldWICR WICR; ///< Watchdog Interrupt Control Register
-		volatile FieldWMCR WMCR; ///< Watchdog Miscellaneous Control Register
-		         word      xA;   // Padding
+		FieldWCR  WCR;  ///< Watchdog Control Register
+		WSRs      WSR;  ///< Watchdog Service Register
+		FieldWRSR WRSR; ///< Watchdog Reset Status Register
+		FieldWICR WICR; ///< Watchdog Interrupt Control Register
+		FieldWMCR WMCR; ///< Watchdog Miscellaneous Control Register
+		word      xA;   // Padding
 	}; // WDOG
 	static_assert(sizeof(WDOG)==6*sizeof(word), "Incorrect ARM::NXP::Timers::WDOGs::WDOG size");
 
