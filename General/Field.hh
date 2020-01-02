@@ -16,8 +16,10 @@ class Field : public S {
 
 public: // Methods
 
+	/// Allow read as `T`
 	inline operator T() const;
 
+	/// Allow read of `volatile` as `T`
 	inline operator T() const volatile;
 
 	inline Field &operator =(T value);
