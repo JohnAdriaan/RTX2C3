@@ -15,6 +15,9 @@ namespace ARM {
 		namespace ISRs {
 		} // namespace ISRs
 
+		namespace CCMs {
+		} // namespace CCMs
+
 		namespace Flash {
 		} // namespace Flash
 

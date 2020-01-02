@@ -13,18 +13,19 @@ namespace ARM::NXP::Clocks {
 	class _Clocks_ : private _NXP_ {
 	}; // _Clocks_
 
-	struct CCM;
+	namespace Analog {
+	} // namespace Analog
 
-	struct Analog;
+	struct CCM;
 
 	struct XTALOSC;
 
 	extern CCM ccm;
 
-	extern Analog analog;
-
 	extern XTALOSC xtalOsc;
 
 } // namespace ARM::NXP::Clocks
+
+#include "Analog.hh"
 
 #endif // ARM_NXP_Clocks_Clocks_hh
